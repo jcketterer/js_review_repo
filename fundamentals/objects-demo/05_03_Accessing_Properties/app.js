@@ -14,3 +14,8 @@ palette['yellow']; //'#f9ca24'
 
 let mysteryColor = 'blue';
 palette[mysteryColor]; //'#30336b'
+
+
+const nums = {
+	100 : 'one hundred'
+}

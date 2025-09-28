@@ -37,5 +37,7 @@ const game = {
 		username  : 'Muffins',
 		playingAs : 'O'
 	},
-	board   : [ [ 'O', null, 'X' ], [ 'X', 'O', 'X' ], [ null, 'O', 'X' ] ]
+	board   : [ [ 'O', null, 'X' ], 
+			    [ 'X', 'O', 'X' ], 
+				[ null, 'O', 'X' ] ]
 };
