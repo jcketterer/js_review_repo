@@ -155,5 +155,41 @@ let color = onlineStatus === 'offline' ? 'red' : 'green';
 
 // ARRAYS
 
+// Push Pop Shift Unshift
 
 
+let topSongs = [
+    'First time i saw your face',
+    'god only knows',
+    'a day in the life',
+    'life on mars'
+]
+
+topSongs.push('Fortunate Son'); //push adds to the end of the array
+
+topSongs.pop() //pop removes the last item on the array
+
+topSongs.shift() //removes from the start
+
+topSongs.unshift('Fortunate Son') //adds item to the first part of the array
+
+//concat to merge two or more arrays
+
+let array1 = [1,2,3]
+let array2 = [4,5,6]
+let meats = ['steak','chicken']
+ 
+//ORDER MATTERS
+
+console.log(array1.concat(array2))
+console.log(array2.concat(array1))
+
+let allArrays = array1.concat(array2,meats)
+
+//Includes and indexOf
+
+//Includes only returns boolean if item exists in array
+//indexOf will show a -1 if the item is not in the array 
+// and show the index of the item if it is in the array
+
+//slice goes up to but not including the second parameter index if you want the second index you need to input three
