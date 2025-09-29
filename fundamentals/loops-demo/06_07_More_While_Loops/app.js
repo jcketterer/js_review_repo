@@ -12,3 +12,7 @@ while (guess !== target) {
 }
 console.log(`Target: ${target} Guess: ${guess}`);
 console.log(`CONGRATS YOU WIN!!`);
+
+
+//while (some conditional)
+// in the loop, update or attempt to make the original condition false 
