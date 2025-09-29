@@ -11,3 +11,12 @@ for (let sub of subreddits) {
 for (let char of 'cockadoodledoo') {
 	console.log(char.toUpperCase());
 }
+
+/*
+NOTES:
+
+Easy way to iterate over iterable objects (like strings)
+
+
+
+*/
