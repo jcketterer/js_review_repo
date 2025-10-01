@@ -13,9 +13,9 @@ function changeColor() {
 }
 lol();
 changeColor();
-age; //DOES NOT EXIST!
-color; //DOES NOT EXIST!
-person; //DOES NOT EXIST!
+//age; //DOES NOT EXIST!
+//color; //DOES NOT EXIST!
+//person; //DOES NOT EXIST!
 
 
 let bird = 'mandarin duck';
