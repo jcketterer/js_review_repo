@@ -1,21 +1,23 @@
-function randomRGB() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return `rgb(${r},${g},${b})`
+function randRgb () {
+  const red = Math.floor(Math.random()*256)
+  const green = Math.floor(Math.random()*256)
+  const blue = Math.floor(Math.random()*256)
+
+  return `rgb(${red},${green},${blue})`
 }
 
-// This changes the entire h1 all at once:
-// const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1')
+
 // setInterval(function () {
-//   h1.style.color = randomRGB();
-// }, 500);
+//   h1.style.color = randRgb(); 
+// }, 500)
 
+const spans = document.querySelectorAll('.letter') 
+//need to grab the class so we use the . because left of the . is tag right of the . is class
 
-// To change each letter independently
-const letters = document.querySelectorAll('.letter');
-const intervalId = setInterval(function () {
-  for (let letter of letters) {
-    letter.style.color = randomRGB();
+const interval = setInterval(function (){
+  for (let span of spans) {
+    span.style.color = randRgb();
   }
-}, 1000);
+}, 1000)
+

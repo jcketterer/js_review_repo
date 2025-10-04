@@ -8,9 +8,10 @@ body {
 
 h1 {
   font-size: 15rem;
-  font-family: Montserrat;
+  font-family: Pirata One;
 }
 
 .letter {
   transition: color 1000ms;
 }
+
