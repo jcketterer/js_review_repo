@@ -4,13 +4,14 @@ const imgs = document.querySelectorAll('img');
 //   console.log(img.getAttribute('src'))
 // }
 
-const src = imgs[0].getAttribute('src');
-for (let img of imgs) {
-  img.setAttribute('src', src);
+const src = imgs[0].getAttribute('src')
+
+for(let img of imgs) {
+  img.setAttribute('src', src)
 }
 
-const quote = document.querySelector('blockquote');
-quote.setAttribute('class', 'section-title')
+const block = document.querySelector('blockquote')
+block.setAttribute('class','section-title')
 
-const h2 = document.querySelector('h2');
-h2.setAttribute('class', 'big');
+const h2 = document.querySelector('h2')
+h2.setAttribute('class', 'big')

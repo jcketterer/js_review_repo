@@ -1,45 +1,41 @@
-// Make a new empty LI
-const newTodo = document.createElement('li');
-// Make a new empty B element
-const boldText = document.createElement('b');
-//Add some text to the new B element:
-boldText.textContent = "DON'T FORGET TO LOCK THE COOP!"
-//Add a class to
-newTodo.classList.add('todo');
-//Add the B element as a child of the LI
-newTodo.append(boldText);
+const newTodo = document.createElement('li')
+const boldText = document.createElement('b')
+const ul = document.querySelector('ul')
 
-//Create a second LI
-const secondTodo = document.createElement('li');
-secondTodo.textContent = "Order more la croix";
-secondTodo.className = 'todo';
+boldText.textContent = 'DONT FORGET TO LOCK THE COOP!'
+newTodo.classList = 'todo'
+newTodo.append(boldText)
 
-// Select the UL we want to append to
-const ul = document.querySelector('ul');
-//Append both new LIs at once!
-ul.append(newTodo, secondTodo);
+const secondTodo = document.createElement('li')
+secondTodo.className = 'todo'
+secondTodo.textContent = 'ORDER MORE LACROIX'
 
-//Prepending a new LI to the UL
-const thirdTodo = document.createElement('li');
-thirdTodo.textContent = "Feed Cats";
-ul.prepend(thirdTodo);
+ul.append(newTodo, secondTodo)
 
-// Making a new image
-const newImg = document.createElement('img');
-newImg.classList.add('thumbnail') //adding a class (to resize the img)
-// Setting the img src
-newImg.setAttribute('src', 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1320&q=80')
+const thirdTodo = document.createElement('li')
 
-document.body.prepend(newImg)
+thirdTodo.textContent = 'Feed Cats'
+thirdTodo.classList = 'todo'
+ul.prepend(thirdTodo)
 
+const picture  = document.createElement('img')
+picture.classList.add('thumbnail')
+picture.setAttribute('src', 'https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg?cs=srgb&dl=pexels-pixabay-86596.jpg&fm=jpg')
 
-// Using removeChild, you need to select the parent in order to remove an element
-// const removeMe = document.querySelector('#remove-me');
+document.body.append(picture)
+
+//remove element the old way
+
+// const removeMe = document.querySelector('#remove-me')
+
 // ul.removeChild(removeMe)
 
-// Using remove() is easier, though it's not supported in IE.
-const removeMe = document.querySelector('#remove-me');
-removeMe.remove();
+//remove element the new way
 
-const h1 = document.querySelector('h1');
-h1.remove();
+const removeMe = document.querySelector('#remove-me')
+
+removeMe.remove()
+
+const h1 = document.querySelector('h1')
+
+h1.remove()

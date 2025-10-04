@@ -1,19 +1,21 @@
-function toggleAllTodos() {
-  const todos = document.querySelectorAll('li');
+const todos = document.querySelectorAll('li');
 
-  for (let li of todos) {
-    li.classList.toggle('completed');
+function toggleAllTodos () {
+  for (let todo of todos) {
+    todo.classList.toggle('completed')
   }
 }
 
-const h1 = document.querySelector('h1');
+const h1 = document.querySelector('h1')
 
-setInterval(function () {
-  if (h1.classList.contains('big')) {
-    h1.innerText = "SAD";
+setInterval(function (){
+  if(h1.classList.contains('big')) {
+    h1.innerText = 'SAD'
   } else {
-    h1.innerText = "HAPPY"
+    h1.innerText = 'HAPPY'
   }
-  h1.classList.toggle('big');
-  h1.classList.toggle('small');
+
+  h1.classList.toggle('big')
+  h1.classList.toggle('small')
 }, 1000)
+
