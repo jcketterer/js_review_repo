@@ -1,22 +1,29 @@
 // When a ____ event occurs on ____ element, do this___
+//click
+//button
+//alert('hi')
 
-function makeBody(color) {
-	document.body.style.backgroundColor = color;
-}
+
+
 
 // *************************************
 // OPTION 1: Inline (look in index.html)
 // *************************************
-
+function makeBody (color) {
+	document.body.style.backgroundColor = color
+}
 // *************************************
 // OPTION 2: onClick property in JS:
 // *************************************
-const h1 = document.querySelector('h1');
-const btn = document.querySelector('#teal');
+
+const tealButton = document.querySelector('#teal')
+
+tealButton.onclick = function () {
+	makeBody('teal')
+}
+
 //set the onclick property to a function:
-btn.onclick = function() {
-	makeBody('teal');
-};
+
 //You cannot attach multiple onclick listeners this way.
 //this function will run, but the previous one will not
 
@@ -27,14 +34,20 @@ btn.onclick = function() {
 // **************************************
 // OPTION 3: addEventListener (THE BEST!)
 // *************************************
-const violetBtn = document.querySelector('#violet');
+
+const violetButton = document.querySelector('#violet')
+const h1 = document.querySelector('h1')
+
+violetButton.addEventListener('click', function () {
+	makeBody('violet')
+})
+
+violetButton.addEventListener('click', function () {
+	h1.style.color = 'cyan'
+})
 
 // Select an element and call the addEventListener method:
-violetBtn.addEventListener('click', function() {
-	makeBody('violet');
-});
+
 
 // You can add as many event listeners as you want (even of the same type)
-violetBtn.addEventListener('click', function() {
-	h1.style.color = 'cyan';
-});
+
