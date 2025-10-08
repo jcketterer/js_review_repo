@@ -1,52 +1,61 @@
 // const removeButtons = document.querySelectorAll('li button');
-// const form = document.querySelector('#add-friend');
-// const input = document.querySelector('#first-name');
-// const friendList = document.querySelector('#friend-list');
+// const ul = document.querySelector('#friend-list')
+// const textInput = document.querySelector('#first-name') 
+// const form = document.querySelector('#add-friend')
 
 // for (let btn of removeButtons) {
-// 	btn.addEventListener('click', function(e) {
-// 		e.target.parentElement.remove();
-// 	});
+// 	btn.addEventListener('click', function (e) {
+// 		e.target.parentElement.remove()
+// 	})
 // }
 
-// form.addEventListener('submit', function(e) {
+// form.addEventListener('submit', function (e) {
 // 	e.preventDefault();
-// 	const newFriend = document.createElement('li');
-// 	const removeBtn = document.createElement('button');
-// 	removeBtn.innerText = 'UnFriend';
-// 	removeBtn.addEventListener('click', function(e) {
-// 		e.target.parentElement.remove();
-// 	});
-// 	newFriend.innerText = input.value;
-// 	newFriend.appendChild(removeBtn);
-// 	friendList.appendChild(newFriend);
-// 	input.value = '';
-// });
+// 	const newEl = document.createElement('li')
+// 	newEl.innerText = `${textInput.value} `
+// 	textInput.value = ''
+// 	ul.appendChild(newEl)
 
-const form = document.querySelector('#add-friend');
-const input = document.querySelector('#first-name');
-const friendList = document.querySelector('#friend-list');
+// 	const newBtn = document.createElement('button')
+// 	newBtn.innerText = 'UnFriend'
 
-friendList.addEventListener('click', function(e) {
+// 	//OPTION 1
+// 	newBtn.addEventListener('click', function (e) {
+// 		e.target.parentElement.remove()
+// 	})
+
+// 	newEl.appendChild(newBtn)
+// })
+
+const ul = document.querySelector('#friend-list')
+const textInput = document.querySelector('#first-name') 
+const form = document.querySelector('#add-friend')
+
+
+
+//USE DELEGATION TO GRAB THE PARENT ELEMENT TO LISTEN FOR CLICKS ON A TARGET.TAGNAME
+ul.addEventListener('click', function (e) {
 	if (e.target.tagName === 'BUTTON') {
-		e.target.parentElement.remove();
+		e.target.parentElement.remove()
 	}
 	else if (e.target.tagName === 'LI') {
-		e.target.classList.add('best-friend');
-		const heart = document.createElement('span');
-		heart.innerHTML = '&hearts;';
-		e.target.prepend(heart);
+		const span = document.createElement('span')
+		span.innerHTML = '&hearts;'
+		e.target.prepend(span)
+		
+		e.target.classList.toggle('best-friend')
 	}
-});
+})
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
 	e.preventDefault();
-	const newFriend = document.createElement('li');
-	const removeBtn = document.createElement('button');
-	removeBtn.innerText = 'UnFriend';
+	const newEl = document.createElement('li')
+	newEl.innerText = `${textInput.value} `
+	textInput.value = ''
+	ul.appendChild(newEl)
 
-	newFriend.innerText = input.value;
-	newFriend.appendChild(removeBtn);
-	friendList.appendChild(newFriend);
-	input.value = '';
-});
+	const newBtn = document.createElement('button')
+	newBtn.innerText = 'UnFriend'
+
+	newEl.appendChild(newBtn)
+})

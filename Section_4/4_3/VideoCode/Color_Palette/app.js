@@ -1,5 +1,8 @@
-const colorsSection = document.querySelector('#colors');
+const colorsSection = document.querySelector('#colors')
 
 colorsSection.addEventListener('click', function(e) {
-	document.body.style.backgroundColor = e.target.dataset.hex;
-});
+	const color = e.target.dataset.hex
+
+	document.body.style.backgroundColor = color
+	
+})
