@@ -120,42 +120,42 @@ describe("#filterByValue", function() {
   });
 });
 
-// describe("#find", function() {
-//   var arr = [1, 2, 3, 4, 5];
-//   it("returns the first value found in an array", function() {
-//     expect(find(arr, 3)).toEqual(3);
-//   });
-//   it("returns undefined if the value is not found", function() {
-//     expect(find(arr, 10)).toEqual(undefined);
-//   });
-// });
+describe("#find", function() {
+  var arr = [1, 2, 3, 4, 5];
+  it("returns the first value found in an array", function() {
+    expect(find(arr, 3)).toEqual(3);
+  });
+  it("returns undefined if the value is not found", function() {
+    expect(find(arr, 10)).toEqual(undefined);
+  });
+});
 
-// describe("#findInObj", function() {
-//   var arr = [
-//     { first: "Elie", last: "Schoppik" },
-//     { first: "Tim", last: "Garcia", isCatOwner: true },
-//     { first: "Matt", last: "Lane" },
-//     { first: "Colt", last: "Steele", isCatOwner: true }
-//   ];
-//   it("returns the first value found in an array", function() {
-//     expect(findInObj(arr, "isCatOwner", true)).toEqual({
-//       first: "Tim",
-//       last: "Garcia",
-//       isCatOwner: true
-//     });
-//   });
-//   it("returns undefined if the value is not found", function() {
-//     expect(findInObj(arr, "isCatOwner", false)).toEqual(undefined);
-//   });
-// });
+describe("#findInObj", function() {
+  var arr = [
+    { first: "Elie", last: "Schoppik" },
+    { first: "Tim", last: "Garcia", isCatOwner: true },
+    { first: "Matt", last: "Lane" },
+    { first: "Colt", last: "Steele", isCatOwner: true }
+  ];
+  it("returns the first value found in an array", function() {
+    expect(findInObj(arr, "isCatOwner", true)).toEqual({
+      first: "Tim",
+      last: "Garcia",
+      isCatOwner: true
+    });
+  });
+  it("returns undefined if the value is not found", function() {
+    expect(findInObj(arr, "isCatOwner", false)).toEqual(undefined);
+  });
+});
 
-// describe("#removeVowels", function() {
-//   it("removes all vowels from a string", function() {
-//     expect(removeVowels("elie")).toEqual("l");
-//     expect(removeVowels("TIM")).toEqual("tm");
-//     expect(removeVowels("ZZZZZZ")).toEqual("zzzzzz");
-//   });
-// });
+describe("#removeVowels", function() {
+  it("removes all vowels from a string", function() {
+    expect(removeVowels("elie")).toEqual("l");
+    expect(removeVowels("TIM")).toEqual("tm");
+    expect(removeVowels("ZZZZZZ")).toEqual("zzzzzz");
+  });
+});
 
 // describe("#doubleOddNumbers", function() {
 //   it("returns an array of all odd numbers doubled", function() {
