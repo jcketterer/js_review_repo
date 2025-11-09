@@ -11,56 +11,81 @@ const words = [
 	'unimaginatively'
 ];
 
+const longWord = words.filter(function (word) {
+	return word.length >= 20;
+})
+
+const uOrC = words.filter(function (word){ 
+	return word[0] === 'u' || word[0] === 'c'
+})
+
 const containsVowel = function(word) {
 	for (let char of word) {
-		if (isVowel(char)) return true;
+		 if(isVowel(char)) return true;
 	}
-	return false;
-};
+	return false
+}
 
 const isVowel = function(char) {
-	return 'aeiou'.indexOf(char) !== -1;
-};
-
-const longWords = words.filter(function(word) {
-	return word.length >= 20;
-});
-
-const cOrUWords = words.filter(function(w) {
-	return w[0] === 'u' || w[0] === 'c';
-});
-
-const containVowels = words.filter(containsVowel);
-
-const noVowels = words.filter(function(word) {
-	return !containsVowel(word);
-});
-
-function extractCompletedTodos() {
-	const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-	return Array.from(allCheckboxes)
-		.filter(function(box) {
-			return box.checked;
-		})
-		.map(function(checkbox) {
-			return checkbox.parentElement.innerText;
-		});
+	return 'aeiou'.indexOf(char) !== -1
 }
 
-function myFilter(arr, callback) {
-	const filteredArray = [];
-	for (let i = 0; i < arr.length; i++) {
-		if (callback(arr[i], i, arr)) {
-			filteredArray.push(arr[i]);
+const containVowel = words.filter(containsVowel)
+const noVowel = words.filter(function(word) {
+	return !containsVowel(word)
+})
+
+//filter with DOM 
+
+
+const allCheckBoxes = Array.from(document.querySelectorAll('input[type="checkbox"]'))
+
+const allCheckedBoxed = allCheckBoxes.filter(function(c) {
+	return c.checked === true;
+})
+
+const completedTodoText = allCheckedBoxed.map(function(checkbox) {
+	return checkbox.parentElement.innerText
+})
+
+//CHAINING
+
+function extractCompletedTodos () {
+	const allCheckBoxes = document.querySelectorAll('input[type="checkbox"]');
+	
+	return Array.from(allCheckBoxes)
+	.filter(function(box) {
+	 	return box.checked;
+	}).map(function(checkbox) {
+		return checkbox.parentElement.innerText;
+	});
+}
+
+//IMPLEMENTING FILTER
+
+const numbers = [1,2,3,4,5,6,7];
+
+function myFilter (arr, callback) {
+	let newArr = []
+
+	for(let i = 0; i < arr.length; i++) {		
+
+		if(callback(arr[i], i, arr)) {
+			 newArr.push(arr[i])
 		}
 	}
-	return filteredArray;
+	return newArr
+
 }
 
-const shorties = myFilter(words, function(word) {
-	return word.length <= 10;
+const shortWords = myFilter(words, function(w) {
+	return w.length <= 5
 });
 
-const everyOtherWord = myFilter(words, function(word, i) {
-	return i % 2 === 0;
-});
+const evenNums = myFilter(numbers, function (n) {
+	return n % 2 === 0
+})
+
+const everyOtherWord = myFilter(words, function(w,i) {
+	return i % 2 === 0
+})

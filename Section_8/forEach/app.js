@@ -1,36 +1,32 @@
-const colors = [ 'teal', 'cyan', 'peach', 'purple' ];
+//forEach will always return undefined
 
-function yell(val, i) {
-	const caps = val.toUpperCase();
-	console.log(`At index ${i}, ${caps}`);
-}
+const colors = ['teal', 'cyan', 'peach','purple'];
 
-colors.forEach(yell);
+// function yell(val,i) {
+// 	const caps = val.toUpperCase()
+// 	console.log(`At index ${i}, ${caps}`)
+// }
 
-const prices = [ 30.99, 19.99, 2.5, 99.0 ];
-let total1 = 0;
-prices.forEach(function(price) {
-	total1 += price;
-});
-console.log(total1);
+// colors.forEach(yell)
 
-let total2 = 0;
-for (let price of prices) {
-	total2 += price;
-}
-console.log(total2);
+// // 'teal', 0, ['teal', 'cyan', 'peach','purple']
 
-// Our own version of forEach:
-function forEach(arr, callback) {
-	for (let i = 0; i < arr.length; i++) {
-		callback(arr[i], i, arr);
+// const prices = [30.99, 19.99, 2.50, 99.00];
+
+// let total = 0
+
+// prices.forEach(function (price) {
+// 	total += price;
+// });
+
+// console.log(total)
+
+function myForEach (arr, callback) {
+	for(let i = 0; i < arr.length; i++) {
+		callback(arr[i], i, arr)
 	}
 }
 
-forEach(colors, function(color, i) {
-	console.log(color.toUpperCase(), 'at index of:', i);
-});
-
-colors.forEach(function(color, i) {
-	console.log(color.toUpperCase(), 'at index of:', i);
-});
+myForEach(colors, function(c, i, a) {
+	console.log(c.toUpperCase(), 'at index of: ',i, a)
+})
